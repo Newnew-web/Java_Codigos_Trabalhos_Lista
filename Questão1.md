@@ -1,6 +1,6 @@
 # Java_Codigos_Trabalhos_Lista
 feito para colocar trabalhos de java da etec
-
+```
 import java.util.Scanner;
 
 public class Questao1 {
@@ -23,9 +23,11 @@ public class Questao1 {
 
         for (int i = 0; i < 20; i++) System.out.print(B[i] + " ");
     }}
+}
+```
 
 
-    
+    ```
 import java.util.Scanner;
 
 public class Questao2 {
@@ -42,8 +44,11 @@ public class Questao2 {
             System.out.println();
         }
     }}
+```
 
 
+
+```
 import java.util.Scanner;
 
 public class Questao3 {
@@ -67,6 +72,13 @@ public class Questao3 {
         }
     }}
 
+```
+
+
+
+
+
+```
     import java.util.Scanner;
 
 public class Questao4 {
@@ -83,6 +95,10 @@ public class Questao4 {
             System.out.println();
         }
     }}
+
+
+```
+
     
     import java.util.Scanner;
 
@@ -102,7 +118,7 @@ public class Questao5 {
     }}
 
 
-
+```
 
 
 public class Questao6 {
@@ -123,7 +139,12 @@ public class Questao6 {
     }
 }
 
+```
 
+
+
+
+```
     
  import java.util.Scanner;
 
@@ -147,8 +168,10 @@ public class Questao7 {
             B[i] = fatorial(A[i]);
 
         for (int x : B) System.out.print(x + " ");
-    }
-}
+    }}
+
+
+```
 
    import java.util.Scanner;
 
@@ -170,6 +193,8 @@ public class Questao8 {
         for (int x : B) System.out.print(x + " ");
     }}
 
+
+```
 
 import java.util.Scanner;
 
@@ -196,7 +221,9 @@ public class Questao9 {
     }
 }
 
+```
 
+```
 
 import java.util.Scanner;
 
@@ -227,6 +254,6 @@ public class Questao10 {
         for (int i = 0; i < pos; i++)
             System.out.print(C[i] + " ");
     }
-}
+```
 
 
