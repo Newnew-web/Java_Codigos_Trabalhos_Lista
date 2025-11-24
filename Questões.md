@@ -1,5 +1,5 @@
 # Java_Codigos_Trabalhos_Lista
-feito para colar trabalhos de java da etec
+
 Questão 1
 
     import java.util.Scanner;
