@@ -1,253 +1,223 @@
 # Java_Codigos_Trabalhos_Lista
 feito para colar trabalhos de java da etec
-# Questão 1
+Questão 1
 
+import java.util.Scanner;
 
-        importar java.util.Scanner;
-        
-        classe pública Questao1 {
-         público estático vazio main(String[] args) {
-         Scanner sc = novo Scanner(System.in);
-         int A[] = novo int[20];
-         int B[] = novo int int B[] = novo int[20];
-        
-         para (int i = 0; i < 20; i++) A[i] = sc.nextInt();
-        
-         int pos = 0;
-        
-         parágrafo (int i = 0; i < 20; i++)
-         se (A[i] % 2 == 0)
-         B[pos++] = A[i];
-        
-         parágrafo (int i = 0; i < 20; i++)
-         se (A[i] % 2 != 0)(A[i] % 2 != 0)
-         B[pos++] = A[i];
-        
-         para (int i = 0; i < 20; i++) System.out.print(B[i] + " ");
-         }}
+public class Questao1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-# Questão  2
+        int[] nums = new int[20];
+        int[] res = new int[20];
+        int tam = 20;
 
-
-    importar java.util.Scanner;
-    
-    classe pública Questao2 {
-     público estático vazio main(String[] args) {
-     Scanner sc = novo Scanner(System.in);
-     int A[] = novo int[5];
-    
-         para (int i = 0; i < 5; i++) A[i] = sc.nextInt();
-    
-         parágrafo (int n: A) {
-         System.out.println("Tabuada de " + n + ":");
-         parágrafo (int i = 1; i <= 10; i++)
-         System.out.println(n + " x " + i + " = " + (n * i));
-         Sistema.out.println();
-            }
-        }}
-
-
-# Questão 3
-
-    importar java.util.Scanner;
-    
-    classe pública Questao3 {
-    
-        booleano estático primo(int n) {
-         se (n <= 1) retornar falso;
-         para (int i = 2; i <= Math.sqrt(n); i++)
-         se (n % i == 0) retornar falso;
-         retornar verdejeiro;
+        for (int i = 0; i < tam; i++) {
+            nums[i] = sc.nextInt();
         }
-    
-        público estático vazio main(String[] args) {
-         Scanner sc = novo Scanner(System.in);
-         int A[] = novo int[10];
-    
-         para (int i = 0; i < 10; i++) A[i] = sc.nextInt();
-    
-         parágrafo (int x: A) {
-         se (primo(x)) System.out.println(x + "é primo");
-         else System.out.println(x + "não é primo");
+
+        int pos = 0;
+
+        for (int i = 0; i < tam; i++) {
+            if (nums[i] % 2 == 0) {
+                res[pos] = nums[i];
+                pos++;
             }
-        }}
+        }
 
-
-# Questão 4
-
-
-        importar java.util.Scanner;
-    
-    classe pública Questao4 {
-     público estático vazio main(String[] args) {
-     Scanner sc = novo Scanner(System.in);
-     int A[] = novo int[10];
-    
-         para (int i = 0; i < 10; i++) A[i] = sc.nextInt();
-    
-         parágrafo (int n: A) {
-         System.out.print("Pares até " + n + ": ");
-         parágrafo (int i = 0; i <= n; i += 2)
-         System.out.print(i + " ");
-         Sistema.out.println();
+        for (int i = 0; i < tam; i++) {
+            if (nums[i] % 2 != 0) {
+                res[pos] = nums[i];
+                pos++;
             }
-        }}
+        }
 
+        for (int i = 0; i < tam; i++) {
+            System.out.print(res[i] + " ");
+        }
+    }
+}
 
-# Questão 5
+Questão 2
 
-    
-     importar java.util.Scanner;
-    
-    public class Questao5 {
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-            int A[] = new int[10];
-    
-            for (int i = 0; i < 10; i++) A[i] = sc.nextInt();
-    
-            for (int n : A) {
-                System.out.print("Divisores de " + n + ": ");
-                for (int i = 1; i <= n; i++)
-                    if (n % i == 0) System.out.print(i + " ");
-                System.out.println();
+import java.util.Scanner;
+
+public class Questao2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int[] nums = new int[5];
+        int tam = 5;
+
+        for (int i = 0; i < tam; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < tam; i++) {
+            int valor = nums[i];
+            System.out.println("Tabuada de " + valor + ":");
+            
+            for (int cont = 1; cont <= 10; cont++) {
+                System.out.println(valor + " x " + cont + " = " + (valor * cont));
             }
-        }}
 
+            System.out.println();
+        }
+    }
+}
 
-# Questão 6
+Questão 3
 
+import java.util.Scanner;
 
-    public class Questao6 {
-    
-        public static void main(String[] args) {
-            int[] A = new int[11];
-    
-            int potencia = 1; 
-    
-            for (int i = 0; i < A.length; i++) {
-                A[i] = potencia;
-                potencia = potencia * 2; // próxima potência
-            }
-    
-            for (int i = 0; i < A.length; i++) {
-                System.out.println("A[" + i + "] = " + A[i]);
+public class Questao3 {
+
+    static boolean primo(int n) {
+        if (n <= 1) return false;
+
+        for (int cont = 2; cont * cont <= n; cont++) {
+            if (n % cont == 0) return false;
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int tam = 10;
+        int[] nums = new int[tam];
+
+        for (int i = 0; i < tam; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < tam; i++) {
+            int valor = nums[i];
+
+            if (primo(valor)) {
+                System.out.println(valor + " é primo");
+            } else {
+                System.out.println(valor + " não é primo");
             }
         }
     }
+}
 
+Questão 4
 
+import java.util.Scanner;
 
+public class Questao4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
+        int tam = 10;
+        int[] nums = new int[tam];
 
-# Questão 7
-    
-     import java.util.Scanner;
-    
-    public class Questao7 {
-    
-        static int fatorial(int n) {
-            int f = 1;
-            for (int i = 1; i <= n; i++) f *= i;
-            return f;
+        for (int i = 0; i < tam; i++) {
+            nums[i] = sc.nextInt();
         }
-    
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-    
-            int A[] = new int[15];
-            int B[] = new int[15];
-    
-            for (int i = 0; i < 15; i++) A[i] = sc.nextInt();
-    
-            for (int i = 0; i < 15; i++)
-                B[i] = fatorial(A[i]);
-    
-            for (int x : B) System.out.print(x + " ");
-        }}
 
+        for (int i = 0; i < tam; i++) {
+            int valor = nums[i];
 
-# Questão 8
-
-   import java.util.Scanner;
-
-    public class Questao8 {
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-            int A[] = new int[10];
-            int B[] = new int[10];
-    
-            for (int i = 0; i < 10; i++) A[i] = sc.nextInt();
-    
-            for (int i = 0; i < 10; i++) {
-                int soma = 0;
-                for (int j = 0; j <= i; j++)
-                    soma += A[j];
-                B[i] = soma;
+            System.out.print("Pares até " + valor + ": ");
+            for (int cont = 0; cont <= valor; cont += 2) {
+                System.out.print(cont + " ");
             }
-    
-            for (int x : B) System.out.print(x + " ");
-        }}
+            System.out.println();
+        }
+    }
+}
 
-# Questão 9
+Questão 5
 
-        import java.util.Scanner;
-        
-        public class Questao9 {
-            public static void main(String[] args) {
-                Scanner sc = new Scanner(System.in);
-        
-                int A[] = new int[10];
-                int B[] = new int[10];
-                int C[] = new int[10];
-                int pos = 0;
-        
-                for (int i = 0; i < 10; i++) A[i] = sc.nextInt();
-                for (int i = 0; i < 10; i++) B[i] = sc.nextInt();
-        
-                for (int x : A)
-                    for (int y : B)
-                        if (x == y) {
-                            C[pos++] = x;
-                            break;
-                        }
-        
-                for (int i = 0; i < pos; i++) System.out.print(C[i] + " ");
+import java.util.Scanner;
+
+public class Questao5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int tam = 10;
+        int[] nums = new int[tam];
+
+        for (int i = 0; i < tam; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < tam; i++) {
+            int valor = nums[i];
+
+            System.out.print("Divisores de " + valor + ": ");
+            for (int cont = 1; cont <= valor; cont++) {
+                if (valor % cont == 0) {
+                    System.out.print(cont + " ");
+                }
             }
+            System.out.println();
+        }
+    }
+}
+
+Questão 6
+
+public class Questao6 {
+
+    public static void main(String[] args) {
+        int tam = 11;
+
+        int[] nums = new int[tam];
+
+        int mult = 1;
+
+        for (int i = 0; i < tam; i++) {
+            nums[i] = mult;
+            mult = mult * 2;
+        }
+
+        for (int i = 0; i < tam; i++) {
+
+            System.out.println("nums[" + i + "] = " + nums[i]);
+        }
+    }
+}
+
+Questão 7
+
+import java.util.Scanner;
+
+public class Questao7 {
+
+    static int fatorial(int n) {
+        int cont = 1;
+
+        for (int i = 1; i <= n; i++) {
+            cont = cont * i;
+        }
+
+        return cont;
     }
 
-# Questão 10
+    public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
 
-    import java.util.Scanner;
-    
-    public class Questao10 {
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-    
-            int A[] = new int[10];
-            int B[] = new int[10];
-            int C[] = new int[10];
-            int pos = 0;
-    
-            for (int i = 0; i < 10; i++) A[i] = sc.nextInt();
-            for (int i = 0; i < 10; i++) B[i] = sc.nextInt();
-    
-            for (int x : A) {
-                int contador = 0;
-    
-                for (int y : B) {
-                    if (x != y) contador++;
-                }
-    
-                if (contador == 10) {
-                    C[pos++] = x;
-                }
-            }
-    
-            for (int i = 0; i < pos; i++)
-                System.out.print(C[i] + " ");
+        int tam = 15;
+        int[] nums = new int[tam];
+        int[] fats = new int[tam];
+
+        for (int i = 0; i < tam; i++) {
+            nums[i] = sc.nextInt();
         }
 
+        for (int i = 0; i < tam; i++) {
+            int valor = nums[i];
+            fats[i] = fatorial(valor);
+        }
 
-
+        for (int i = 0; i < tam; i++) {
+            System.out.print(fats[i] + " ");
+        }
+    }
+}
